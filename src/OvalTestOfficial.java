@@ -63,4 +63,24 @@ public class OvalTestOfficial
     }
     
     // TODO: test color and fill in constructor.
+    
+    @Test
+    public void testOvalColor()
+    {
+    	Assert.assertEquals("Color is not correct on oval", Color.BLACK, o1.getColor());
+    	Assert.assertEquals("Color is not correct on oval", Color.CYAN, o2.getColor());
+    	
+    	Assert.assertEquals("Color is not correct on circle", Color.BLUE, c1.getColor());
+    	Assert.assertEquals("Color is not correct on circle", Color.RED, c2.getColor());
+    }
+    
+    @Test
+    public void testOvalFilledConstructor()
+    {
+    	Assert.assertEquals("Oval fill is incorrect", true, o1.isFilled());
+    	Assert.assertEquals("Oval fill is incorrect", false, o2.isFilled());
+    	
+    	Assert.assertEquals("Circle fill is incorrect", true, c1.isFilled());
+    	Assert.assertEquals("Circle fill is incorrect", false, c2.isFilled());
+    }
 }

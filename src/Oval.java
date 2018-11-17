@@ -33,7 +33,11 @@ public class Oval extends Shape
     {
         super(color, filled);
 
-        // TODO: complete implementation.
+        this.diameter1=diameter1;
+        this.diameter2=diameter2;
+        
+        super.location = new Point[1];
+        super.location[0] = pointCenter;
     }
 
     /**
@@ -73,6 +77,21 @@ public class Oval extends Shape
     {
         graphics.setColor(this.getColor());
         
-        // TODO: define how to draw an oval. Remember that the point stored is the center point.
+        if(isFilled())
+        {
+        	graphics.fillOval(
+        			(int)this.location[0].getX()-diameter1/2,
+        			(int)this.location[0].getY()-diameter2/2,
+        			diameter1,
+        			diameter2);
+        }
+        else
+        {
+        	graphics.drawOval(
+        			(int)this.location[0].getX()-diameter1/2,
+        			(int)this.location[0].getY()-diameter2/2,
+        			diameter1,
+        			diameter2);
+        }
     }
 }

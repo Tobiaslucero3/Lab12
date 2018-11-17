@@ -29,6 +29,18 @@ public class PolyLine extends Polygon
      */
     public PolyLine(Point pointUL, Point pointUR, int thickness, Color color, boolean filled)
     {
-        // TODO: implement this.
+        super(color,filled);
+        
+        Point pointLR = new Point();
+        Point pointLL = new Point();
+        
+        pointLR.setLocation(pointUR.getX(), pointUR.getY()-thickness);
+        pointLL.setLocation(pointUL.getX(), pointUL.getY()-thickness);
+      
+        super.location= new Point[4];
+        super.location[0] = pointUL;
+        super.location[1] = pointUR;
+        super.location[2] = pointLR;
+        super.location[3] = pointLL;
     }
 }

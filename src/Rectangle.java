@@ -22,6 +22,25 @@ public class Rectangle extends Polygon
      */
     public Rectangle(Point center, int width, int height, Color color, boolean filled)
     {
-        // TODO: implement this.
+        super(color,filled);
+        
+        super.location= new Point[4];
+        
+        Point a = new Point();
+        Point b = new Point();
+        Point c = new Point();
+        Point d = new Point();
+        
+        a.setLocation( center.getX()-width/2, center.getY()-height/2);
+        b.setLocation( center.getX()+width/2, center.getY()-height/2);
+        c.setLocation( center.getX()-width/2, center.getY()+height/2);
+        d.setLocation( center.getX()+width/2, center.getY()+height/2);
+        
+        super.location[0] = a;
+        super.location[1] = b;
+        super.location[2] = d;
+        super.location[3] = c;
+        
+        	
     }
 }
